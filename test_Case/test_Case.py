@@ -1,15 +1,13 @@
 import time
 
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
-from Generics.BaseClass import baseClass
+from Generics.BaseClass import  BaseClass
 from PageObjectModel.CheckOutPage import CheckOut
 from PageObjectModel.HomePage import HomePage
 
 
-class Test_Example(baseClass):
+class Test_Example(BaseClass):
     def test_sample(self):
         driver=self.driver
 
@@ -23,9 +21,8 @@ class Test_Example(baseClass):
         Check=CheckOut(driver)
         Check.orderPlacing(CountryName)
 
-        w = WebDriverWait(driver, 10)
-        w.until(expected_conditions.presence_of_element_located((By.XPATH, "//a[.='India']")))
-        driver.find_element(By.XPATH, "//a[.='India']").click()
+
+        #driver.find_element(By.XPATH, "//a[.='India']").click()
         driver.find_element(By.XPATH, "//input[@value='Purchase']").click()
         msg = driver.find_element(By.XPATH, "//div[@class='alert alert-success alert-dismissible']").text
         print(msg)

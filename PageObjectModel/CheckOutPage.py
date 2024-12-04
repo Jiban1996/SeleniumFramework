@@ -1,4 +1,8 @@
+import time
+
 from selenium.webdriver.common.by import By
+
+from Generics import BaseClass
 
 
 class CheckOut:
@@ -7,10 +11,15 @@ class CheckOut:
 
     checkOutButton = (By.XPATH, "//button[normalize-space()='Checkout']")
     country=(By.XPATH , "//input[@id='country']")
-    #driver.find_element(By.XPATH, "").send_keys("Ind")
+    countryLink=(By.XPATH,"//a[.='India']")
 
     def orderPlacing(self,country):
         self.driver.find_element(*CheckOut.checkOutButton).click()
         self.driver.find_element(*CheckOut.country).send_keys(country)
+        #time.sleep(10)
+        BaseClass.BaseClass.waitUntilElement(*CheckOut.countryLink)
+        self.driver.find_element(*CheckOut.countryLink).click()
+
+
 
 
