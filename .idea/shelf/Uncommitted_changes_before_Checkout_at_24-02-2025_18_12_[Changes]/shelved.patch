@@ -1,0 +1,14 @@
+Index: ../PythonBasicProgramme/EvenNumberPrint.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>for i in range(100):\r\n    if(i%2==0):\r\n        print(i)
+===================================================================
+diff --git a/../PythonBasicProgramme/EvenNumberPrint.py b/../PythonBasicProgramme/EvenNumberPrint.py
+--- a/../PythonBasicProgramme/EvenNumberPrint.py	
++++ b/../PythonBasicProgramme/EvenNumberPrint.py	
+@@ -1,3 +1,3 @@
+ for i in range(100):
+-    if(i%2==0):
++    if( i%2==0 ):
+         print(i)
+\ No newline at end of file

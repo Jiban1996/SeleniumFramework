@@ -9,4 +9,4 @@ class BaseClass:
 
     def waitUntilElement(self,ele):
         w = WebDriverWait(self.driver, 10)
-        w.until(expected_conditions.presence_of_element_located(ele))
+        w.until(expected_conditions.element_to_be_clickable(ele))
